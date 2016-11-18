@@ -1,9 +1,9 @@
-command: "pmset -g batt | egrep '([0-9]+\%).*' -o --colour=auto | cut -f1 -d';'"
+command: "flexbar.widget/get_stats.sh"
 
-refreshFrequency: 150000 # ms
+refreshFrequency: 1000 # ms
 
 render: (output) ->
-  "<i>⚡</i>#{output}"
+  "#{output}"
 
 style: """
   -webkit-font-smoothing: antialiased
