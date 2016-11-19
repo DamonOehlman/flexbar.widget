@@ -6,9 +6,13 @@ refreshFrequency: 5000 # ms
 
 render: (output) ->
   """
+  <link rel="stylesheet" type="text/css" href="/flexbar.widget/css/font-awesome.css">
   <div class="flexbar__title">title</div>
   <div class="flexbar__system">
-    <div class="battery"></div>
+    <div class="battery">
+      <span class="fa fa-battery fa-fw"></span>
+      <span class="value"></span>
+    </div>
     <div class="date"></div>
     <div class="time"></div>
   </div>
@@ -16,7 +20,7 @@ render: (output) ->
 
 update: (output, domEl) ->
   systemStats = output.split("|")
-  $(".battery", domEl).text(systemStats[0])
+  $(".battery .value", domEl).text(systemStats[0])
   $('.date', domEl).text(systemStats[3])
   $(".time", domEl).text(systemStats[4])
 
@@ -39,6 +43,6 @@ style: """
   }
 
   .flexbar__system div {
-    margin-left: 10px;
+    margin-left: 20px;
   }
 """
