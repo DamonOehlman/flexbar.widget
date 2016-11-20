@@ -14,7 +14,7 @@ get_system_stats() {
   mem="$(ps -A -o %mem | awk '{s+=$1} END {print s}')"
   cpu="$(ps -A -o %cpu | awk '{s+=$1} END { printf("%.2f",s/8); }')"
 
-  echo "${battery}|${mem}|${cpu}";
+  echo "${cpu}|${mem}|${battery}";
 }
 
 get_date_time() {
