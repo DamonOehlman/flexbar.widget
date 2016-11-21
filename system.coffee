@@ -18,7 +18,10 @@ render: (output) ->
       <span class="value"></span>
     </div>
     <div class="battery">
-      <span class="fa fa-battery fa-fw"></span>
+      <span class="fa-stacked">
+        <span class="fa fa-battery fa-fw fa-stacked-1x"></span>
+        <!-- <span class="fa fa-bolt fa-fw" fa-stacked-2x"></span> -->
+      </span>
       <span class="value"></span>
     </div>
     <div class="date">
@@ -41,11 +44,12 @@ update: (output, domEl) ->
   $(".time .value", domEl).text(systemStats[4])
 
 style: """
-  font: 1.5vh Osaka-Mono;
+  display: flex;
+  align-items: baseline;
+  font: 1.2vh Osaka-Mono;
   color: #9C9486;
   width: 98vw;
   padding: 6px 1vw;
-  display: flex;
   background: #171717;
   justify-content: space-between;
   -webkit-font-smoothing: antialiased;

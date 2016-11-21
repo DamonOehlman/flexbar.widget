@@ -1,6 +1,6 @@
-command: "echo $(/usr/local/bin/kwmc query space active tag)"
+command: "flexbar.widget/get_kwm_info.sh"
 
-refreshFrequency: 1000 # ms
+refreshFrequency: 500
 
 render: (output) ->
   """
@@ -9,17 +9,29 @@ render: (output) ->
     <span class="fa fa-desktop fa-fw"></span>
     <span class="value"></span>
   </div>
+  <div class="title">
+    <span class="fa fa-desktop fa-fw"></span>
+    <span class="value"></span>
+  </div>
   """
 
-update: (output, el) ->
-    $(".foc .value", el).text("  #{output}")
+update: (output, domEl) ->
+  kwmInfo = output.split("|")
+  $('.foc .value', domEl).text(kwmInfo[0]);
+  $('.title .value', domEl).text(kwmInfo[1]);
 
 style: """
+  display: flex;
+  align-items: baseline;
   -webkit-font-smoothing: antialiased
   color: #d5c4a1
-  font: 1.5vh Osaka-Mono;
+  font: 1.2vh Osaka-Mono;
   overflow: hidden
   text-overflow: ellipsis
   left: 1vw;
   top: 6px;
+
+  .value {
+    margin-right: 10px;
+  }
 """
