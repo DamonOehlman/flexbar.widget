@@ -25,7 +25,7 @@ style: """
   align-items: baseline;
   -webkit-font-smoothing: antialiased
   color: #d5c4a1
-  font: 1.2vh Osaka-Mono;
+  font: 1.2vh Hack;
   overflow: hidden
   text-overflow: ellipsis
   left: 1vw;

@@ -46,7 +46,7 @@ update: (output, domEl) ->
 style: """
   display: flex;
   align-items: baseline;
-  font: 1.2vh Osaka-Mono;
+  font: 1.2vh Hack;
   color: #9C9486;
   width: 98vw;
   padding: 6px 1vw;
